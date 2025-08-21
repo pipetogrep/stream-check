@@ -5,9 +5,9 @@
 **stream-check** is a fast-ish*, concurrent CLI tool that uses [`ffprobe`](https://ffmpeg.org/ffprobe.html) to analyze IPTV streams.
 It exports stream metadata to CSV and produces a curated M3U containing only the channels that meet your quality thresholds.
 
-✅ Cleans bloated playlists down to what you actually want
-✅ Adds `[1080P 50FPS]` style tags into channel names
-✅ Works on macOS, Linux, and anywhere with Python 3 + ffprobe
+* ✅ Cleans bloated playlists down to what you actually want
+* ✅ Adds `[1080P 50FPS]` style tags into channel names
+* ✅ Works on macOS, Linux, and anywhere with Python 3 + ffprobe
 
 *10 workers can analyze 15,000 streams in ~45 minutes.
 
@@ -47,7 +47,10 @@ sudo apt install ffmpeg
 git clone https://github.com/pipetogrep/stream-check.git
 cd stream-check
 python3 stream-check.py --help
+```
 
+### Check dem streams
+```bash
 python3 stream-check.py input.m3u \
   --csv results.csv \
   --out-m3u filtered.m3u \
@@ -60,6 +63,7 @@ python3 stream-check.py input.m3u \
 ```
 
 ### Options
+```bash
 --csv : Output CSV path (default: streams_quality.csv)
 --out-m3u : Output filtered playlist path (default: filtered_quality.m3u)
 --ffprobe : Path to ffprobe binary (if not in $PATH)
@@ -69,6 +73,7 @@ python3 stream-check.py input.m3u \
 --min-fps : Minimum framerate
 --log-every : Progress interval
 --no-line-log : Disable per-channel logs
+```
 
 ### Example Output
 ```bash
